@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Component } from "react";
-import { AppRegistry, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 class App extends Component<any, any> {
 
-  public render(): JSX.Element {
+  public render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -42,5 +42,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   } as React.TextStyle,
 });
-
-AppRegistry.registerComponent("ReactNativeTS", () => App);
