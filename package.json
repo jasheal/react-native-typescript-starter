@@ -1,0 +1,35 @@
+{
+  "name": "react-native-ts",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "15.3.2",
+    "react-native": "0.37.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "redux-actions": "^0.13.0",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^0.14.47",
+    "@types/react-native": "^0.34.38",
+    "babel-jest": "17.0.0",
+    "babel-preset-react-native": "1.9.0",
+    "jest": "17.0.0",
+    "jest-react-native": "17.0.0",
+    "react-test-renderer": "~15.3.1",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.9"
+  },
+  "jest": {
+    "preset": "jest-react-native",
+    "testPathDirs": [
+      "./tests"
+    ],
+    "testRegex": ".*$"
+  }
+}
