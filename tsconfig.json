@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "es2015",
         "target": "es2015",
-        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
         "jsx": "react",
         "outDir": "build",
         "noImplicitAny": true,
