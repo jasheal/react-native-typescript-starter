@@ -2,7 +2,10 @@ import * as React from "react";
 import { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-class App extends Component<any, any> {
+interface Props {}
+interface State {}
+
+class App extends Component<Props, State> {
 
   public render() {
     return (
