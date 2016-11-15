@@ -4,13 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import globalActions from "../../actions";
-
-interface Props {
-    appName: string;
-    counter: number;
-    actions: any;
-}
-interface State {}
+import { ICounterProps } from "../../interfaces/screens";
 
 function mapStateToProps(state: any) {
   return state.global;
@@ -20,7 +14,7 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(globalActions, dispatch) };
 }
 
-class Counter extends Component<Props, State> {
+class Counter extends Component<ICounterProps, void> {
 
     constructor(props: any) {
         super(props);
