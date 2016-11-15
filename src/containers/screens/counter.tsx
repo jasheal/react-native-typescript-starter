@@ -3,7 +3,7 @@ import { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import globalActions from "./actions";
+import globalActions from "../../actions";
 
 interface Props {
     appName: string;
@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(globalActions, dispatch) };
 }
 
-class Root extends Component<Props, State> {
+class Counter extends Component<Props, State> {
 
     constructor(props: any) {
         super(props);
@@ -29,7 +29,7 @@ class Root extends Component<Props, State> {
   public render() {
     return (
       <View style={styles.container}>
-        <Text style={[styles.counter, {fontSize: this.props.counter + 30}]}>
+        <Text style={styles.counter}>
             {this.props.counter}
         </Text>
         <Text style={styles.welcome}>
@@ -45,7 +45,7 @@ class Root extends Component<Props, State> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 const styles = StyleSheet.create({
   container: {

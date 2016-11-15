@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import Root from "./root";
+import Counter from "./containers/screens/counter";
 import reducers from "./reducers";
 import { Provider, connect } from "react-redux";
 import { createStore, applyMiddleware, compose} from "redux";
@@ -20,7 +20,7 @@ const store = configureStore({});
 
 const App = () => (
   <Provider store={store}>
-    <Root />
+    <Counter />
   </Provider>
 );
 
