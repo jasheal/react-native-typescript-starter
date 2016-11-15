@@ -1,47 +1,27 @@
 import * as React from "react";
 import { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import Root from "./root";
+import reducers from "./reducers";
+import { Provider, connect } from "react-redux";
+import { createStore, applyMiddleware, compose} from "redux";
+import thunkMiddleware from "redux-thunk";
+import * as createLogger from "redux-logger";
+import devTools from "remote-redux-devtools";
 
-interface Props {}
-interface State {}
-
-class App extends Component<Props, State> {
-
-  public render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-            Welcome to React Native TypeScript
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit src/main.tsx
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{"\n"}
-          Cmd+D or shake for options
-        </Text>
-      </View>
-    );
-  }
+function configureStore(initialState: any) {
+  const enhancer = compose(
+    applyMiddleware(thunkMiddleware),
+    devTools()
+  );
+  return createStore(reducers, initialState, enhancer);
 }
 
-export default App;
+const store = configureStore({});
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
-  } as React.ViewStyle,
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10,
-  } as React.TextStyle,
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5,
-  } as React.TextStyle,
-});
+const App = () => (
+  <Provider store={store}>
+    <Root />
+  </Provider>
+);
+
+export default App;
