@@ -3,7 +3,7 @@ exports[`test renders correctly 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#F5FCFF",
+      "backgroundColor": "#003340",
       "flex": 1,
       "justifyContent": "center",
     }
@@ -14,41 +14,65 @@ exports[`test renders correctly 1`] = `
     ellipsizeMode="tail"
     style={
       Object {
+        "color": "#2c5e6a",
+        "fontSize": 100,
+        "textAlign": "center",
+      }
+    }>
+    0
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "lightgrey",
         "fontSize": 20,
         "margin": 10,
         "textAlign": "center",
       }
     }>
-    Welcome to React Native TypeScript
+    React + Native + TypeScript + Redux
   </Text>
-  <Text
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
     accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "color": "#333333",
-        "marginBottom": 5,
-        "textAlign": "center",
+        "alignItems": "center",
+        "backgroundColor": "#092228",
+        "borderColor": "#06566b",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "height": 30,
+        "justifyContent": "center",
+        "opacity": 1,
+        "width": 100,
       }
-    }>
-    To get started, edit src/main.tsx
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "#333333",
-        "marginBottom": 5,
-        "textAlign": "center",
-      }
-    }>
-    Press Cmd+R to reload,
-    
-    
-    Cmd+D or shake for options
-  </Text>
+    }
+    testID={undefined}>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+        }
+      }>
+      Update
+    </Text>
+  </View>
 </View>
 `;
