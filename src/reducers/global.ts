@@ -1,21 +1,20 @@
 import ACTION_TYPES from "../constants";
+import { fromJS } from "immutable";
 
-const defaultState = {
+const defaultState = fromJS({
     appName: "React + Native + TypeScript + Redux",
     keywords: ["react", "react-native", "typescript", "redux"],
     counter: 0
-};
+});
 
-const globalReducer = (previousState: any = defaultState, action: any) => {
+const globalReducer = (state: any = defaultState, action: any) => {
   switch (action.type) {
     case ACTION_TYPES.INCREASE_ITEM:
-      return Object.assign({}, previousState, {
-        counter: previousState.counter + 1
-      });
+      return state.set("counter", state.get("counter") + 1);
     case ACTION_TYPES.DECREASE_ITEM:
-      return previousState;
+      return state;
     default:
-      return previousState;
+      return state;
   }
 };
 

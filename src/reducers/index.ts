@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers } from "redux-immutable";
 import globalReducer from "./global";
 
 const reducers =  combineReducers({

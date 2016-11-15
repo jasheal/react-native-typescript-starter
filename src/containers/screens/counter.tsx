@@ -7,7 +7,7 @@ import globalActions from "../../actions";
 import { ICounterProps } from "../../interfaces/screens";
 
 function mapStateToProps(state: any) {
-  return state.global;
+  return state.get("global").toObject();
 }
 
 function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {

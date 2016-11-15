@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose} from "redux";
 import thunkMiddleware from "redux-thunk";
 import * as createLogger from "redux-logger";
 import devTools from "remote-redux-devtools";
+import {fromJS} from "immutable";
 
 function configureStore(initialState: any) {
   const enhancer = compose(
@@ -15,8 +16,8 @@ function configureStore(initialState: any) {
   );
   return createStore(reducers, initialState, enhancer);
 }
-
-const store = configureStore({});
+let initialState = fromJS({});
+const store = configureStore(initialState);
 
 const App = () => (
   <Provider store={store}>
