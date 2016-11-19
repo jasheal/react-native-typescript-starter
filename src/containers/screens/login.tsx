@@ -4,60 +4,35 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
-import { ICounterProps } from "../../interfaces/screens";
-
-function mapStateToProps(state: any) {
-  return { counter2: state.counter2, app: state.app };
-}
 
 function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(actions, dispatch) };
 }
 
-class Counter2 extends Component<any, void> {
-
-  static navigatorStyle = {
-    drawUnderNavBar: true,
-    navBarTranslucent: true
-  };
+class Login extends Component<any, void> {
 
   constructor(props: any) {
       super(props);
       console.log(props);
   }
 
-  public nextScreen() {
-    this.props.navigator.push({
-      screen: "screen.Counter",
-      title: "New title"
-    });
-  }
-
   public render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.counter}>
-            {this.props.counter2.counter}
-        </Text>
         <Text style={styles.welcome}>
-          {this.props.app.appName}
+          Login
         </Text>
         <TouchableOpacity
             style={styles.button}
-            onPress={this.props.actions.increaseItemC2}>
-            <Text style={styles.buttonText}>Update</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-            style={styles.button}
-            onPress={this.nextScreen.bind(this)}>
-        <Text style={styles.buttonText}>Go -></Text>
+            onPress={this.props.actions.login}>
+        <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter2);
+export default connect(null, mapDispatchToProps)(Login);
 
 const styles = StyleSheet.create({
   container: {

@@ -6,10 +6,10 @@ import * as SI from "seamless-immutable";
 import devTools from "remote-redux-devtools";
 import reducers from "../build/reducers";
 import * as actions from "../build/actions/global_actions";
-import * as createLogger from "redux-logger";
-
-import {registerScreens} from "./screens";
+// import * as createLogger from "redux-logger";
+import {registerScreens} from "./register_screens";
 import {Platform} from "react-native";
+import {LOGIN_CONFIG, TAB_CONFIG} from "./screen_configs";
 
 const configureStore = () => {
   const enhancer = compose(
@@ -20,37 +20,37 @@ const configureStore = () => {
 }
 const store = configureStore();
 
-// // screen related book keeping
 registerScreens(store, Provider);
 
-// // notice that this is just a simple class, it's not a React component
 class App {
 
   constructor() {
-    // since react-redux only works on components, we need to subscribe this class manually
     store.subscribe(this.onStoreUpdate.bind(this));
     store.dispatch(actions.appInitialized());
   }
 
   onStoreUpdate() {
     const {root} = store.getState().app;
-    // handle a root change
-    // if your app doesn't change roots in runtime, you can remove onStoreUpdate() altogether
-    if (this.currentRoot != root) {
+
+    if (this.currentRoot != root ) {
       this.currentRoot = root;
       this.startApp(root);
     }
   }
 
   startApp(root) {
-    Navigation.startSingleScreenApp({
-      screen: {
-          screen: 'screen.Counter',
-          title: 'Login',
-          navigatorStyle: {}
-      }
-    });
+    switch (root) {
+      case "login":
+         Navigation.startSingleScreenApp(LOGIN_CONFIG);
+        return;
+      case "after-login":
+        Navigation.startTabBasedApp(TAB_CONFIG);
+        return;
+      default:
+        console.error("Unknown app root");
+    }
   }
+
 }
 
 export default App;

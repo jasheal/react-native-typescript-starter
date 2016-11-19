@@ -16,6 +16,11 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
 
 class Counter extends Component<any, void> {
 
+  static navigatorStyle = {
+    drawUnderNavBar: true,
+    navBarTranslucent: true
+  };
+
   constructor(props: any) {
       super(props);
       console.log(props);
@@ -24,6 +29,14 @@ class Counter extends Component<any, void> {
   public nextScreen() {
     this.props.navigator.push({
       screen: "screen.Counter2",
+      title: "Title 2"
+    });
+  }
+
+  public onModalPress() {
+    this.props.navigator.showModal({
+      title: "Modal",
+      screen: "modals.Modal"
     });
   }
 
@@ -45,6 +58,11 @@ class Counter extends Component<any, void> {
             style={styles.button}
             onPress={this.nextScreen.bind(this)}>
         <Text style={styles.buttonText}>Go -></Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            style={styles.button}
+            onPress={this.onModalPress.bind(this)}>
+        <Text style={styles.buttonText}>Modal</Text>
         </TouchableOpacity>
       </View>
     );
