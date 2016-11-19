@@ -7,14 +7,14 @@ import actions from "../../actions";
 import { ICounterProps } from "../../interfaces/screens";
 
 function mapStateToProps(state: any) {
-  return { counter1: state.counter1, app: state.app };
+  return { counter2: state.counter2, app: state.app };
 }
 
 function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(actions, dispatch) };
 }
 
-class Counter extends Component<any, void> {
+class Counter2 extends Component<any, void> {
 
   constructor(props: any) {
       super(props);
@@ -23,7 +23,7 @@ class Counter extends Component<any, void> {
 
   public nextScreen() {
     this.props.navigator.push({
-      screen: "screen.Counter2",
+      screen: "screen.Counter",
     });
   }
 
@@ -31,14 +31,14 @@ class Counter extends Component<any, void> {
     return (
       <View style={styles.container}>
         <Text style={styles.counter}>
-            {this.props.counter1.counter}
+            {this.props.counter2.counter}
         </Text>
         <Text style={styles.welcome}>
           {this.props.app.appName}
         </Text>
         <TouchableOpacity
             style={styles.button}
-            onPress={this.props.actions.increaseItemC1}>
+            onPress={this.props.actions.increaseItemC2}>
             <Text style={styles.buttonText}>Update</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -51,7 +51,7 @@ class Counter extends Component<any, void> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter2);
 
 const styles = StyleSheet.create({
   container: {

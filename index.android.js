@@ -1,8 +1,8 @@
-"use-strict"
+// "use-strict"
 
-import { AppRegistry } from "react-native";
-import App from "./build/main";
+// import { AppRegistry } from "react-native";
+// import App from "./build/main";
 
-AppRegistry.registerComponent("ReactNativeTS", () => App);
+// AppRegistry.registerComponent("ReactNativeTS", () => App);
 
-export default App;
+// export default App;
