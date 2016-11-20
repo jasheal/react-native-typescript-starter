@@ -33,6 +33,17 @@ class Counter2 extends Component<any, void> {
     });
   }
 
+  public showLightbox() {
+    this.props.navigator.showLightBox({
+        screen: "modals.LightBoxScreen", // unique ID registered with Navigation.registerScreen
+        passProps: {}, // simple serializable object that will pass as props to the lightbox (optional)
+        style: {
+          backgroundBlur: "none", // 'dark' / 'light' / 'xlight' / 'none' - the type of blur on the background
+          backgroundColor: "#FFFFFF" // tint color for the background, you can specify alpha here (optional)
+        }
+    });
+  }
+
   public render() {
     return (
       <View style={styles.container}>
@@ -50,7 +61,17 @@ class Counter2 extends Component<any, void> {
         <TouchableOpacity
             style={styles.button}
             onPress={this.nextScreen.bind(this)}>
-        <Text style={styles.buttonText}>Go -></Text>
+        <Text style={styles.buttonText}>Next</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            style={styles.button}
+            onPress={this.props.actions.appInitialized}>
+        <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            style={styles.button}
+            onPress={this.showLightbox.bind(this)}>
+        <Text style={styles.buttonText}>Lightbox</Text>
         </TouchableOpacity>
       </View>
     );

@@ -5,6 +5,7 @@ import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
 import { ICounterProps } from "../../interfaces/screens";
+const ICONS = require("../../../config/icons").default;
 
 function mapStateToProps(state: any) {
   return { counter1: state.counter1, app: state.app };
@@ -19,6 +20,26 @@ class Counter extends Component<any, void> {
   static navigatorStyle = {
     drawUnderNavBar: true,
     navBarTranslucent: true
+  };
+  static navigatorButtons = {
+    rightButtons: [
+      {
+        icon: ICONS.ADD, // for icon button, provide the local image asset name
+        id: "add" // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
+      },
+      {
+        title: "Edit", // for a textual button, provide the button title (label)
+        id: "edit", // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
+        disabled: true, // optional, used to disable the button (appears faded and doesn't interact)
+        disableIconTint: true, // optional, by default the image colors are overridden and tinted to navBarButtonColor, set to true to keep the original image colors
+      }
+    ],
+    leftButtons: [
+      {
+        icon: ICONS.EDIT, // for icon button, provide the local image asset name
+        id: "edit" // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
+      }
+    ]
   };
 
   constructor(props: any) {
