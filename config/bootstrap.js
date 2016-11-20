@@ -6,10 +6,13 @@ import * as SI from "seamless-immutable";
 import devTools from "remote-redux-devtools";
 import reducers from "../build/reducers";
 import * as actions from "../build/actions/global_actions";
-// import * as createLogger from "redux-logger";
 import {registerScreens} from "./register_screens";
 import {Platform} from "react-native";
 import {LOGIN_CONFIG, TAB_CONFIG} from "./screen_configs";
+
+if(__DEV__) {
+  console.log("Development mode");
+};
 
 const configureStore = () => {
   const enhancer = compose(

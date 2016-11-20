@@ -1,3 +1,5 @@
+import ICONS from "./icons";
+
 const LOGIN_CONFIG = { 
     screen: {
         screen: "screen.Login",
@@ -13,8 +15,8 @@ const TAB_CONFIG = {
         {
             label: "One",
             screen: "screen.Counter",
-            icon: require("../img/one.png"),
-            selectedIcon: require("../img/one_selected.png"),
+            icon: ICONS.HOME,
+            selectedIcon: ICONS.HOME_SELECTED,
             title: "Screen One",
             overrideBackPress: true,
             navigatorStyle: {}
@@ -22,8 +24,8 @@ const TAB_CONFIG = {
         {
             label: "Two",
             screen: "screen.Counter2",
-            icon: require("../img/two.png"),
-            selectedIcon: require("../img/two_selected.png"),
+            icon: ICONS.FAVOURITE,
+            selectedIcon: ICONS.FAVOURITE_SELECTED,
             title: "Screen Two",
             navigatorStyle: {}
         }
