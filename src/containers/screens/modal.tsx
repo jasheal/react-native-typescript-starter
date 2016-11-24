@@ -3,29 +3,35 @@ import { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Provider, connect } from "react-redux";
 
-class Modal extends Component<any, void> {
+export interface IModalProps {
+  navigator: any;
+}
 
-  constructor(props: any) {
-      super(props);
+class Modal extends Component<IModalProps, void> {
+
+  constructor(props: IModalProps) {
+    super(props);
+
+    this.dismissModal = this.dismissModal.bind(this);
   }
 
-  public dismissModal() {
-    this.props.navigator.dismissModal({
-        animationType: "slide-down"
-    });
-  }
-
-  public render() {
+  public render(): JSX.Element {
     return (
       <View style={styles.container}>
         <Text>
             I am a modal!
         </Text>
-        <TouchableOpacity onPress={this.dismissModal.bind(this)}>
+        <TouchableOpacity onPress={this.dismissModal}>
             <Text>Close</Text>
         </TouchableOpacity>
       </View>
     );
+  }
+
+  private dismissModal(): void {
+    this.props.navigator.dismissModal({
+        animationType: "slide-down"
+    });
   }
 }
 

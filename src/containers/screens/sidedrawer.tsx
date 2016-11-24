@@ -3,13 +3,12 @@ import { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 
-class SideDrawer extends Component<any, any> {
+export interface ISideDrawerProps {
+}
 
-    constructor(props: any) {
-        super(props);
-    }
+class SideDrawer extends Component<ISideDrawerProps, void> {
 
-    public render() {
+    public render(): JSX.Element {
         return(
             <View style={styles.container}>
                 <Text>Im a side drawer</Text>

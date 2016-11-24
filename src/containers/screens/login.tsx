@@ -9,14 +9,17 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(actions, dispatch) };
 }
 
-class Login extends Component<any, void> {
+export interface IActions {
+  login: () => any;
+}
 
-  constructor(props: any) {
-      super(props);
-      console.log(props);
-  }
+export interface ILoginProps {
+  actions: IActions;
+}
 
-  public render() {
+class Login extends Component<ILoginProps, void> {
+
+  public render(): JSX.Element {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>

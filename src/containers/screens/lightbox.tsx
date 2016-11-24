@@ -3,17 +3,13 @@ import { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Provider, connect } from "react-redux";
 
-class Lightbox extends Component<any, void> {
+export interface ILightBoxProps {
+  navigator: any;
+}
 
-  constructor(props: any) {
-      super(props);
-  }
+class Lightbox extends Component<ILightBoxProps, void> {
 
-  public dismissLightBox() {
-    this.props.navigator.dismissLightBox();
-  }
-
-  public render() {
+  public render(): JSX.Element {
     return (
       <View style={styles.container}>
         <Text>
@@ -25,6 +21,11 @@ class Lightbox extends Component<any, void> {
       </View>
     );
   }
+
+  private dismissLightBox(): void {
+    this.props.navigator.dismissLightBox();
+  }
+
 }
 
 export default connect()(Lightbox);

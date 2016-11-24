@@ -6,6 +6,15 @@ const LOGIN_CONFIG: any = {
         title: "Start",
         navigatorStyle: {
             navBarHidden: true
+        },
+    },
+    drawer: {
+        left: {
+            screen: "navigation.SideDrawer"
+        },
+        disableOpenGesture: false,
+        passProps: {
+            title: "Hello from SideMenu"
         }
     }
 };
@@ -44,15 +53,6 @@ const TAB_CONFIG: any = {
     },
     animationType: "slide-down",
     title: "Redux Example",
-    drawer: {
-    left: {
-        screen: "navigation.SideDrawer"
-    },
-    disableOpenGesture: false,
-    passProps: {
-        title: "Hello from SideMenu"
-    }
-    },
     appStyle: {
     bottomTabBadgeTextColor: "#ffffff",
     bottomTabBadgeBackgroundColor: "#ff0000"

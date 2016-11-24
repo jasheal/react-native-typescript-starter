@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
-import { ICounterProps } from "../../interfaces/screens";
 
 function mapStateToProps(state: any) {
   return { counter2: state.counter2, app: state.app };
@@ -14,26 +13,29 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(actions, dispatch) };
 }
 
-class Counter2 extends Component<any, void> {
+export interface ICounterProps {
+    navigator: any;
+    appName: string;
+    counter2: any;
+    actions: any;
+    app: any;
+}
+
+class Counter2 extends Component<ICounterProps, void> {
 
   static navigatorStyle = {
     drawUnderNavBar: true,
     navBarTranslucent: true
   };
 
-  constructor(props: any) {
-      super(props);
-      console.log(props);
-  }
-
-  public nextScreen() {
+  public nextScreen(): void {
     this.props.navigator.push({
       screen: "screen.Counter",
       title: "New title"
     });
   }
 
-  public showLightbox() {
+  public showLightbox(): void {
     this.props.navigator.showLightBox({
         screen: "modals.LightBoxScreen", // unique ID registered with Navigation.registerScreen
         passProps: {}, // simple serializable object that will pass as props to the lightbox (optional)
@@ -44,7 +46,7 @@ class Counter2 extends Component<any, void> {
     });
   }
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <View style={styles.container}>
         <Text style={styles.counter}>
