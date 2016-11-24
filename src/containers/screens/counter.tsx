@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Animated } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
@@ -52,6 +52,9 @@ class Counter extends Component<any, void> {
       screen: "screen.Counter2",
       title: "Title 2"
     });
+  }
+
+  public exploreAnimatedApi(){
   }
 
   public onModalPress() {
