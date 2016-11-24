@@ -4,23 +4,34 @@ import { StyleSheet, Text, View, TouchableOpacity, Animated } from "react-native
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
-import { ICounterProps } from "../../interfaces/screens";
 import ICONS from "../../config/icons";
 
 function mapStateToProps(state: any) {
-  return { counter1: state.counter1, app: state.app };
+  return {
+      counter1: state.counter1,
+      app: state.app
+  };
 }
 
 function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(actions, dispatch) };
 }
 
-class Counter extends Component<any, void> {
+export interface ICounterProps {
+    navigator: any;
+    appName: string;
+    counter1: any;
+    actions: any;
+    app: any;
+}
+
+class Counter extends Component<ICounterProps, void> {
 
   static navigatorStyle = {
     drawUnderNavBar: true,
     navBarTranslucent: true
   };
+
   static navigatorButtons = {
     rightButtons: [
       {
@@ -42,29 +53,25 @@ class Counter extends Component<any, void> {
     ]
   };
 
-  constructor(props: any) {
-      super(props);
-      console.log(props);
-  }
-
-  public nextScreen() {
+  public nextScreen(): void {
     this.props.navigator.push({
       screen: "screen.Counter2",
       title: "Title 2"
     });
   }
 
-  public exploreAnimatedApi(){
+  public exploreAnimatedApi(): void {
+    // TODO - Animation demos
   }
 
-  public onModalPress() {
+  public onModalPress(): void {
     this.props.navigator.showModal({
       title: "Modal",
       screen: "modals.Modal"
     });
   }
 
-  public render() {
+  public render(): JSX.Element {
     return (
       <View style={styles.container}>
         <Text style={styles.counter}>
