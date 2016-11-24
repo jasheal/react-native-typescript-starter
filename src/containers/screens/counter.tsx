@@ -5,7 +5,7 @@ import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
 import { ICounterProps } from "../../interfaces/screens";
-const ICONS = require("../../../config/icons").default;
+import ICONS from "../../config/icons";
 
 function mapStateToProps(state: any) {
   return { counter1: state.counter1, app: state.app };

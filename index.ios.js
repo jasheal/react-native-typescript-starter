@@ -1,5 +1,5 @@
 "use-strict"
 
-import App from "./config/bootstrap";
+import App from "./build/main";
 
 const app = new App();

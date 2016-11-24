@@ -1,6 +1,6 @@
 import ICONS from "./icons";
 
-const LOGIN_CONFIG = { 
+const LOGIN_CONFIG: any = {
     screen: {
         screen: "screen.Login",
         title: "Start",
@@ -8,9 +8,9 @@ const LOGIN_CONFIG = {
             navBarHidden: true
         }
     }
-}
+};
 
-const TAB_CONFIG = { 
+const TAB_CONFIG: any = {
     tabs: [
         {
             label: "One",
@@ -44,9 +44,9 @@ const TAB_CONFIG = {
     },
     animationType: "slide-down",
     title: "Redux Example",
-    drawer: { 
-    left: { 
-        screen: "navigation.SideDrawer" 
+    drawer: {
+    left: {
+        screen: "navigation.SideDrawer"
     },
     disableOpenGesture: false,
     passProps: {
@@ -57,6 +57,6 @@ const TAB_CONFIG = {
     bottomTabBadgeTextColor: "#ffffff",
     bottomTabBadgeBackgroundColor: "#ff0000"
     }
-}
+};
 
 export { LOGIN_CONFIG, TAB_CONFIG }
