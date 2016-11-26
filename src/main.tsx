@@ -19,17 +19,15 @@ if (__DEV__) {
   console.log("Development mode in simulator");
 };
 
-const configureStore = () => {
-  const enhancer = compose(
-    applyMiddleware(thunk),
-    devTools(),
-    autoRehydrate()
-  );
-  return createStore(reducers, undefined, enhancer);
-};
-const store: any = configureStore();
+// Set up store
+const initialState = SI.from({});
+const enhancer = compose(applyMiddleware(thunk), devTools());
+const store: any = createStore(reducers, initialState, enhancer);
 
+// On state change - persist store to local DB enginge
 persistStore(store, {storage: AsyncStorage});
+
+// Register screens
 registerScreens(store, Provider);
 
 // Recommended way to bootstrap the app when using react-native-navigation
