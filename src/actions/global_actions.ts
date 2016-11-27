@@ -1,10 +1,6 @@
 import ACTION_TYPES from "../constants";
-import makeActionCreator from "../utils/make_action_creator";
+import { makeActionCreator } from "../utils";
 
-export const increaseItemC1 = makeActionCreator(ACTION_TYPES.INCREASE_ITEM_C1);
-export const increaseItemC2 = makeActionCreator(ACTION_TYPES.INCREASE_ITEM_C2);
-export const decreaseItem = makeActionCreator(ACTION_TYPES.DECREASE_ITEM);
-export const addItem = makeActionCreator(ACTION_TYPES.ADD_ITEM);
 export const changeAppRoot = makeActionCreator(ACTION_TYPES.ROOT_CHANGED, "root");
 
 export const appInitialized = () => {

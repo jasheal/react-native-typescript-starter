@@ -1,8 +1,5 @@
-// Modules without Type Definitions
-const { Navigation } = require("react-native-navigation");
-const { persistStore } = require("redux-persist");
-declare var __DEV__: any;
-
+import { persistStore } from "redux-persist";
+import { Navigation } from "react-native-navigation";
 import {Platform, AsyncStorage} from "react-native";
 import store from "./store";
 import {Provider} from "react-redux";

@@ -95,11 +95,6 @@ class Counter extends Component<ICounterProps, void> {
         </TouchableOpacity>
         <TouchableOpacity
             style={styles.button}
-            onPress={this.nextScreen.bind(this)}>
-        <Text style={styles.buttonText}>Go -></Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-            style={styles.button}
             onPress={this.onModalPress.bind(this)}>
         <Text style={styles.buttonText}>Modal</Text>
         </TouchableOpacity>

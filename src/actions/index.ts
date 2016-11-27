@@ -1,6 +1,10 @@
-import * as actions from "./global_actions";
-import combineActionsGroups from "../utils/combine_actions";
+import { combineActionsGroups } from "../utils";
+import * as global from "./global_actions";
+import * as counter from "./counter_actions";
+import * as todo from "./todo_actions";
 
 export default combineActionsGroups(
-    actions
+    global,
+    counter,
+    todo
 );

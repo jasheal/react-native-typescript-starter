@@ -5,7 +5,8 @@ const LOGIN_CONFIG: any = {
         screen: "screen.Login",
         title: "Start",
         navigatorStyle: {
-            navBarHidden: true
+            navBarHidden: true,
+            screenBackgroundColor: "#f00"
         },
     },
     drawer: {
@@ -21,41 +22,29 @@ const LOGIN_CONFIG: any = {
 
 const TAB_CONFIG: any = {
     tabs: [
-        {
-            label: "One",
-            screen: "screen.Counter",
-            icon: ICONS.HOME,
-            selectedIcon: ICONS.HOME_SELECTED,
-            title: "Screen One",
-            overrideBackPress: true,
+         {
+            label: "Todos",
+            screen: "screen.TodoList",
+            icon: ICONS.FAVOURITE,
+            selectedIcon: ICONS.FAVOURITE_SELECTED,
+            title: "Todo List",
             navigatorStyle: {}
         },
         {
-            label: "Two",
-            screen: "screen.Counter2",
+            label: "Counter",
+            screen: "screen.Counter",
             icon: ICONS.FAVOURITE,
             selectedIcon: ICONS.FAVOURITE_SELECTED,
-            title: "Screen Two",
+            title: "Counter",
+            overrideBackPress: true,
             navigatorStyle: {}
         }
     ],
-    passProps: {
-    str: "This is a prop passed in \"startTabBasedApp\"!",
-    obj: {
-        str: "This is a prop passed in an object!",
-        arr: [
-            {
-                str: "This is a prop in an object in an array in an object!"
-            }
-        ]
-    },
-        num: 1234
-    },
     animationType: "slide-down",
     title: "Redux Example",
     appStyle: {
-    bottomTabBadgeTextColor: "#ffffff",
-    bottomTabBadgeBackgroundColor: "#ff0000"
+        bottomTabBadgeTextColor: "#ffffff",
+        bottomTabBadgeBackgroundColor: "#ff0000"
     }
 };
 

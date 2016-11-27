@@ -12,6 +12,8 @@
         "watch": true
     },
     "filesGlob": [
+        "type-declarations/globals.d.ts",
+        "type-declarations/modules.d.ts",
         "src/**/*.ts",
         "src/**/*.tsx"
     ],
