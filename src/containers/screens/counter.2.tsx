@@ -1,17 +1,17 @@
 import * as React from "react";
 import { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, InteractionManager } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
 
-<!-- function mapStateToProps(state: any) {
+function mapStateToProps(state: any) {
   return { counter2: state.counter2, app: state.app };
 }
 
 function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
     return { actions : bindActionCreators(actions, dispatch) };
-} -->
+}
 
 interface ICounterProps {
     navigator: any;
@@ -29,9 +29,11 @@ class Counter2 extends Component<ICounterProps, any> {
   };
 
   public nextScreen(): void {
-    this.props.navigator.push({
-      screen: "screen.Counter",
-      title: "New title"
+    InteractionManager.runAfterInteractions(() => {
+      this.props.navigator.push({
+          screen: "screen.Counter",
+          title: "New title"
+      });
     });
   }
 

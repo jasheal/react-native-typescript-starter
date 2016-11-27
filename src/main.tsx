@@ -1,11 +1,10 @@
 // Modules without Type Definitions
 const { Navigation } = require("react-native-navigation");
-const { persistStore, autoRehydrate } = require("redux-persist");
+const { persistStore } = require("redux-persist");
 declare var __DEV__: any;
 
 import {Platform, AsyncStorage} from "react-native";
-import devTools  from "remote-redux-devtools";
-import {createStore, applyMiddleware, combineReducers, compose} from "redux";
+import store from "./store";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import * as SI from "seamless-immutable";
@@ -20,12 +19,7 @@ if (__DEV__) {
 };
 
 // Set up store
-const initialState = SI.from({});
-const enhancer = compose(applyMiddleware(thunk), devTools());
-const store: any = createStore(reducers, initialState, enhancer);
-
-// On state change - persist store to local DB enginge
-persistStore(store, {storage: AsyncStorage});
+const persistor = persistStore(store, {storage: AsyncStorage});
 
 // Register screens
 registerScreens(store, Provider);

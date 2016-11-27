@@ -9,9 +9,13 @@ const defaultState = SI.from({
 const counter2 = (state: any = defaultState, action: any) => {
   switch (action.type) {
     case REHYDRATE:
-      return state.merge({
-        counter: action.payload.counter2.counter
-      });
+      if (action.payload.counter2) {
+        console.log(action);
+        return state.merge({
+          counter: action.payload.counter2.counter
+        });
+      }
+      return state;
     case ACTION_TYPES.INCREASE_ITEM_C2:
       return state.merge({
         counter: state.counter + 1

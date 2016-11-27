@@ -1,6 +1,8 @@
+const { persistStore, purgeStoredState } = require("redux-persist");
 import * as React from "react";
+import store from "../../store";
 import { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Animated } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Animated, InteractionManager, AsyncStorage } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
@@ -54,9 +56,11 @@ class Counter extends Component<ICounterProps, void> {
   };
 
   public nextScreen(): void {
-    this.props.navigator.push({
-      screen: "screen.Counter2",
-      title: "Title 2"
+    InteractionManager.runAfterInteractions(() => {
+      this.props.navigator.push({
+          screen: "screen.Counter2",
+          title: "New title"
+      });
     });
   }
 
@@ -69,6 +73,10 @@ class Counter extends Component<ICounterProps, void> {
       title: "Modal",
       screen: "modals.Modal"
     });
+  }
+
+  public clearCache(): void {
+    purgeStoredState({storage: AsyncStorage});
   }
 
   public render(): JSX.Element {
@@ -94,6 +102,11 @@ class Counter extends Component<ICounterProps, void> {
             style={styles.button}
             onPress={this.onModalPress.bind(this)}>
         <Text style={styles.buttonText}>Modal</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            style={styles.button}
+            onPress={this.clearCache.bind(this)}>
+        <Text style={styles.buttonText}>Clear Cache</Text>
         </TouchableOpacity>
       </View>
     );
