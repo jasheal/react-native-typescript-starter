@@ -4,6 +4,10 @@ declare module "react-native-navigation" {
     export var Navigation: any;
 }
 
+declare module "redux-persist/constants" {
+    export var REHYDRATE: any;
+}
+
 declare module "redux-persist" {
     export var persistStore: any;
 }

@@ -1,4 +1,4 @@
-const { persistStore, purgeStoredState } = require("redux-persist");
+import { persistStore, purgeStoredState } from "redux-persist";
 import * as React from "react";
 import store from "../../store";
 import { Component } from "react";
@@ -10,7 +10,7 @@ import ICONS from "../../config/icons";
 
 function mapStateToProps(state: any) {
   return {
-      counter1: state.counter1,
+      counter: state.counter,
       app: state.app
   };
 }
@@ -22,7 +22,7 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
 export interface ICounterProps {
     navigator: any;
     appName: string;
-    counter1: any;
+    counter: any;
     actions: any;
     app: any;
 }
@@ -55,14 +55,6 @@ class Counter extends Component<ICounterProps, void> {
     ]
   };
 
-  public nextScreen(): void {
-    InteractionManager.runAfterInteractions(() => {
-      this.props.navigator.push({
-          screen: "screen.Counter2",
-          title: "New title"
-      });
-    });
-  }
 
   public exploreAnimatedApi(): void {
     // TODO - Animation demos
@@ -83,7 +75,7 @@ class Counter extends Component<ICounterProps, void> {
     return (
       <View style={styles.container}>
         <Text style={styles.counter}>
-            {this.props.counter1.counter}
+            {this.props.counter.counter}
         </Text>
         <Text style={styles.welcome}>
           {this.props.app.appName}
