@@ -17,8 +17,3 @@ declare module "remote-redux-devtools" {
     var devTools: any;
     export default devTools;
 }
-
-declare module "react-native-vector-icons/Ionicons" {
-    var Icon: any;
-    export default Icon; 
-}
