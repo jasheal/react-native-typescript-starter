@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, InteractionManager } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, InteractionManager, StatusBar } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
@@ -22,15 +22,34 @@ interface ITodoListProps {
 
 class TodoList extends Component<ITodoListProps, any> {
 
+  constructor(props: ITodoListProps) {
+    super(props);
+
+    // if you want to listen on navigator events, set this up
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+  }
+
+  public onNavigatorEvent(ev: any) { // this is the onPress handler for the two buttons together
+
+    console.log(ev);
+
+    if (ev.type === "NavBarButtonPress") { // this is the event type for button presses
+      if (ev.id === "reset") { // this is the same id field from the static navigatorButtons definition
+        console.log("RESET");
+        this.props.actions.resetCounter();
+      }
+    }
+  }
+
   static navigatorStyle = {
     drawUnderNavBar: true,
     navBarTranslucent: true
   };
 
-
   public render(): JSX.Element {
     return (
       <View style={styles.container}>
+        <StatusBar showHideTransition="slide" animated={true}/>
       </View>
     );
   }

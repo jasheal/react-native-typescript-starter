@@ -5,14 +5,20 @@ declare module "react-native-navigation" {
 }
 
 declare module "redux-persist/constants" {
-    export var REHYDRATE: any;
+    export const REHYDRATE: any;
 }
 
 declare module "redux-persist" {
     export var persistStore: any;
+    export var purgeStoredState: any;
 }
 
 declare module "remote-redux-devtools" {
-     var devTools: any;
-     export default devTools;
+    var devTools: any;
+    export default devTools;
+}
+
+declare module "react-native-vector-icons/Ionicons" {
+    var Icon: any;
+    export default Icon; 
 }

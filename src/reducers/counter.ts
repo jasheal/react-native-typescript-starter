@@ -20,6 +20,10 @@ const counter = (state: any = defaultState, action: any) => {
       return state.merge({
         counter: state.counter + 1
       });
+    case ACTION_TYPES.RESET_COUNTER:
+      return state.merge({
+        counter: 0
+      });
     default:
       return state;
   }

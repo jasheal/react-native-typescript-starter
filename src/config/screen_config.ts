@@ -13,10 +13,7 @@ const LOGIN_CONFIG: any = {
         left: {
             screen: "navigation.SideDrawer"
         },
-        disableOpenGesture: false,
-        passProps: {
-            title: "Hello from SideMenu"
-        }
+        disableOpenGesture: false
     }
 };
 
@@ -25,8 +22,8 @@ const TAB_CONFIG: any = {
          {
             label: "Todos",
             screen: "screen.TodoList",
-            icon: ICONS.FAVOURITE,
-            selectedIcon: ICONS.FAVOURITE_SELECTED,
+            icon: ICONS.BULLET_LIST,
+            selectedIcon: ICONS.BULLET_LIST,
             title: "Todo List",
             navigatorStyle: {}
         },
@@ -42,9 +39,8 @@ const TAB_CONFIG: any = {
     ],
     animationType: "slide-down",
     title: "Redux Example",
-    appStyle: {
-        bottomTabBadgeTextColor: "#ffffff",
-        bottomTabBadgeBackgroundColor: "#ff0000"
+    tabsStyle: {
+        tabBarBackgroundColor: "#000000"
     }
 };
 
