@@ -1,7 +1,12 @@
-# React Native + TypeScript + Redux
+# React Native + TypeScript + Redux + Seamless Immutable
 
-This starter kit is designed to get you up and running with mobile development on React Native.
-This is currently a work in progress, some dependencies may change. [React Native Navigation's] (https://github.com/wix/react-native-navigation) new version is currently not stable and does not have @types available yet.
+This starter kit is designed to get you up and running with mobile development on React Native using Typescript, Redux and Immutable data structures. The emphasis and goals with this starter kit are based in real world use cases:
+
+- 100% native navigation
+- Scalablitlity
+- Suitable for larger projects and teams
+
+This is currently a work in progress, some dependencies WILL change.
 
 ## Table of Contents
 1. [Featured packages](#features)
@@ -12,17 +17,21 @@ This is currently a work in progress, some dependencies may change. [React Nativ
 ## Featured packages
 * [react](https://github.com/facebook/react)
 * [redux](https://github.com/rackt/redux)
-* [typescript] (https://www.typescriptlang.org)
-* [seamless-immutable] (https://github.com/rtfeldman/seamless-immutable)
-* [react-native-navigation] (https://github.com/wix/react-native-navigation)
+* [typescript](https://www.typescriptlang.org)
+* [seamless-immutable](https://github.com/rtfeldman/seamless-immutable)
+* [react-native-navigation](https://github.com/wix/react-native-navigation)
 * [redux-persist](https://github.com/rt2zz/redux-persist)
-* [jest] (https://facebook.github.io/jest)
-* [remote-redux-devtools] (https://github.com/zalmoxisus/remote-redux-devtools)
-* [Remote-redux-devtools-on-debugger] (https://github.com/jhen0409/remote-redux-devtools-on-debugger)
+* [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension)
+* [react-native-debugger](https://github.com/jhen0409/react-native-debugger)
+* [jest](https://facebook.github.io/jest)
 
 ## Requirements
 
-## Getting Started
+### IOS and Android
 
-## Application Structure
+### IOS Only
+
+### Android Only
+
+## Getting Started
 
