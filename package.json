@@ -5,9 +5,10 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "postinstall": "remotedev-debugger [options]"
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
+    "lodash": "^4.17.2",
     "react": "15.3.2",
     "react-native": "0.37.0",
     "react-native-navigation": "^2.0.0-experimental.141",
@@ -18,7 +19,8 @@
     "redux-logger": "^2.7.4",
     "redux-persist": "^4.0.0-beta1",
     "redux-thunk": "^2.1.0",
-    "seamless-immutable": "^6.3.0"
+    "seamless-immutable": "^6.3.0",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "@types/immutable": "^3.8.5",
@@ -34,12 +36,12 @@
     "babel-preset-react-native": "1.9.0",
     "jest": "17.0.0",
     "jest-react-native": "17.0.0",
+    "react-native-debugger-open": "^0.3.2",
     "react-test-renderer": "~15.3.1",
     "redux-thunk": "^2.1.0",
-    "remote-redux-devtools": "^0.5.4",
-    "remote-redux-devtools-on-debugger": "^0.7.0",
+    "redux-devtools-extension": "^1.0.0",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.9"
+    "typescript": "^2.1.5"
   },
   "jest": {
     "preset": "jest-react-native",
