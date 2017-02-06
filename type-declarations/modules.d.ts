@@ -13,6 +13,10 @@ declare module "react-native-navigation" {
     export var Navigation: any;
 }
 
+declare module "redux-devtools-extension" {
+    export var composeWithDevTools: any;
+}
+
 declare module "remote-redux-devtools" {
     var devTools: any;
     export default devTools;
