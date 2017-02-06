@@ -2,11 +2,10 @@ import ICONS from "./icons";
 
 const LOGIN_CONFIG: any = {
     screen: {
-        screen: "screen.Login",
+        screen: "screen.Counter",
         title: "Start",
         navigatorStyle: {
-            navBarHidden: true,
-            screenBackgroundColor: "#f00"
+            navBarHidden: true
         },
     },
     drawer: {

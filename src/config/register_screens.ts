@@ -1,14 +1,16 @@
-import  { Navigation } from "react-native-navigation";
-import Counter from "../containers/screens/counter";
-import TodoList from "../containers/screens/todo_list";
+import { Navigation } from "react-native-navigation";
+import Counter from "../containers/screens/Counter";
+import TodoList from "../containers/screens/TodoList";
 import Modal from "../components/modal";
 import SideDrawer from "../components/sidedrawer";
-import Login from "../containers/screens/login";
 import Lightbox from "../components/lightbox";
+import IntroMenu from "../containers/screens/IntroMenu";
 
 // register all screens of the app (including internal ones)
 export function registerScreens(store: Redux.Store<any>, Provider: any) {
-  Navigation.registerComponent("screen.Login", () => Login, store, Provider);
+
+  // Main menu
+  Navigation.registerComponent("screen.IntroMenu", () => IntroMenu, store, Provider);
 
   // Main smart components
   Navigation.registerComponent("screen.TodoList", () => TodoList, store, Provider);

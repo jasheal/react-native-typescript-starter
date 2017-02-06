@@ -1,9 +1,8 @@
 import { persistStore, purgeStoredState } from "redux-persist";
-// import Icon from "react-native-vector-icons/Ionicons";
 import * as React from "react";
 import store from "../../store";
 import { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Animated, InteractionManager, AsyncStorage, StatusBar } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, TouchableWithoutFeedback, Animated, InteractionManager, AsyncStorage, StatusBar } from "react-native";
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
@@ -96,13 +95,15 @@ class Counter extends Component<ICounterProps, void> {
     return (
       <View style={styles.container}>
         <StatusBar />
-        <TouchableOpacity
+        <TouchableWithoutFeedback
           onPress={this.props.actions.increaseItem.bind(this)}
           onLongPress={this.onModalPress.bind(this)}>
-          <Text style={styles.counter}>
-              { this.props.counter.counter }
-          </Text>
-        </TouchableOpacity>
+          <View>
+            <Text style={styles.counter}>
+                { this.props.counter.counter }
+            </Text>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     );
   }
