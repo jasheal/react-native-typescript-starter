@@ -8,7 +8,6 @@
  */
 
 #import "AppDelegate.h"
-#import "RCCManager.h"
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
 
