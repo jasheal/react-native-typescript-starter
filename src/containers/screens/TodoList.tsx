@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TouchableOpacity, InteractionManager, StatusBar
 import { Provider, connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import actions from "../../actions";
-import { ITodo } from "../../interfaces/state";
 
 function mapStateToProps(state: any) {
   return { todos: state.todos};
@@ -17,10 +16,10 @@ function mapDispatchToProps(dispatch: Redux.Dispatch<any>) {
 interface ITodoListProps {
     navigator: any;
     actions: any;
-    todos: ITodo[];
+    todos: Array<TodoStatic>;
 }
 
-class TodoList extends Component<ITodoListProps, any> {
+class TodoList extends Component<ITodoListProps, void> {
 
   constructor(props: ITodoListProps) {
     super(props);

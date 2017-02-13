@@ -4,7 +4,11 @@
     ---------------------------------------------------------------------------
 */
 
-export interface TodoStatic {
+interface TodoStatic {
+    id: number;
     title: string;
-    description?: string;
+    description?: string;       
+    completed: boolean;
+    archived: boolean;
 }
+

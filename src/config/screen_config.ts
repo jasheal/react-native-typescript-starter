@@ -2,7 +2,7 @@ import ICONS from "./icons";
 
 const LOGIN_CONFIG: any = {
     screen: {
-        screen: "screen.Counter",
+        screen: "screen.IntroMenu",
         title: "Start",
         navigatorStyle: {
             navBarHidden: true

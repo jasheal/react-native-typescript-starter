@@ -2,8 +2,6 @@ import ACTION_TYPES from "../constants";
 import * as SI from "seamless-immutable";
 
 const initialState = SI.from({
-  appName: "React + Native + TypeScript + Redux",
-  keywords: ["react", "react-native", "typescript", "redux"],
   root: undefined // 'login' / 'after-login'
 });
 
